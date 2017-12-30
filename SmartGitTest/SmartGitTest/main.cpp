@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 int gcd(int v1, int v2){
     while (v2) {
@@ -64,6 +65,32 @@ vector<int>::const_iterator find_val(vector<int>::const_iterator beg,
     return res_iter;
     
 }
+int incr(int &val){
+    return ++val;
+}
+//string::size_type findChar(string &s,char c){
+//    string::size_type i=0;
+//    while (i!=s.size()&&s[i]!=c) {
+//        ++i;
+//    }
+////    for(decltype(i) a=0;a<s.size();a++){
+////        if(s[a]==c){
+////            i++;
+////        }else{
+////            i=i;
+////        }
+////    }
+//    return i;
+//}
+string::size_type findChar(string &s,char c){
+    string::size_type i=0;
+    for(decltype(i) a=0;a<s.size();a++){
+        if (s[a]==c) {
+            i++;
+        }
+    }
+    return i;
+}
 int main(int argc, const char * argv[]) {
     // insert code here...
     //std::cout << "Hello, World!\n";
@@ -72,30 +99,40 @@ int main(int argc, const char * argv[]) {
 //    cin>>x>>y;
 //    z =gcd(x, y);
 //    cout<<"The gcd number of x and y ="<<z<<endl;
-    int i = 42;
-    int a = 50;
-    
-    int *p = &a;
-    int z=big(i, p);
-    cout<<"the bigger one is :"<<z<<endl;
-    swap0(&i, p);
-    cout<<"now i ="<<i<<endl;
-    cout<<"now *p ="<<*p<<endl;
-    cout<<"!!!!!!!!!!!"<<endl;
-    swap1(&i, &a);
-    cout<<"now i ="<<i<<endl;
-    cout<<"now *p ="<<*p<<endl;
-    cout<<"!!!!!!!!!!"<<endl;
-    swap2(i, a);
-    cout<<"now i ="<<i<<endl;
-    cout<<"now *p ="<<*p<<endl;
-    
-    vector<int> ac={42,42,0,42,00,32,42};
-    vector<int>::size_type ctr;
-    vector<int>::const_iterator it=find_val(ac.begin(), ac.end(), 42, ctr);
-    cout<<ctr<<endl;
+//    int i = 42;
+//    int a = 50;
+//
+//    int *p = &a;
+//    int z=big(i, p);
+//    cout<<"the bigger one is :"<<z<<endl;
+//    swap0(&i, p);
+//    cout<<"now i ="<<i<<endl;
+//    cout<<"now *p ="<<*p<<endl;
+//    cout<<"!!!!!!!!!!!"<<endl;
+//    swap1(&i, &a);
+//    cout<<"now i ="<<i<<endl;
+//    cout<<"now *p ="<<*p<<endl;
+//    cout<<"!!!!!!!!!!"<<endl;
+//    swap2(i, a);
+//    cout<<"now i ="<<i<<endl;
+//    cout<<"now *p ="<<*p<<endl;
+//
+//    vector<int> ac={42,42,0,42,00,32,42};
+//    vector<int>::size_type ctr;
+//    vector<int>::const_iterator it=find_val(ac.begin(), ac.end(), 42, ctr);
+//    cout<<ctr<<endl;
 //    cout<<"i= "<<*p<<endl;
 //    reset(p);
 //    cout<<"i= "<<*p<<endl;
+//    short v1=0;
+//    const int v2=42;
+//    int v3 =43;
+//    int v4=incr(v3);
+//    cout<<v4<<endl;
+    string s="adcddacdcdccd";
+    char c='a';
+    auto z=findChar(s, c);
+    cout<<z<<endl;
+    
     return 0;
 }
